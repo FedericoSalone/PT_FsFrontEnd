@@ -1,0 +1,21 @@
+.row{
+    padding: 30px;
+    background-color: #839192 ;
+}
+
+.container{
+    width: auto;
+    padding-top: 20px;
+}
+
+.colum1, .colum2{
+    display: inline-block;
+    text-align: justify;
+}
+
+h1,h3,p{
+    color: #ffffff;
+}
+.imagenp{
+    box-shadow: 10px 10px 10px #000000;
+}
