@@ -8,7 +8,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./infopersonal.component.css']
 })
 export class InfopersonalComponent implements OnInit {
-  persona: persona = new persona ({ nombre: "", apellido: "", img: "" });
+  persona: persona = new persona ("","","");
   
   constructor(public personaService: PersonaService) { }
 
