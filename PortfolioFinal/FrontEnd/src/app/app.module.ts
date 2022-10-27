@@ -12,12 +12,13 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardAndSkillsComponent } from './componentes/hard-and-skills/hard-and-skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia/new-experiencia.component';
 
 
 
@@ -34,6 +35,7 @@ import { interceptorProvider } from './service/interceptor-service';
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienciaComponent,
     
     
     
@@ -46,9 +48,6 @@ import { interceptorProvider } from './service/interceptor-service';
     HttpClientModule,
     RouterModule,
     FormsModule,
-  
-    
-    
   ],
   providers: [
     interceptorProvider,
