@@ -1,117 +1,43 @@
 <div class="row">
-  <h1>Hard and Soft Skills</h1>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-<h4>HTML</h4>
- <circle-progress
-   [percent]="90"
-   [radius]="100"
-   [outerStrokeWidth]="10"
-   [innerStrokeWidth]="3"
-   [showUnits]="false"
-   [imageSrc]="'../assets/html.png'"
-   [showImage]="true"
-   [imageWidth]="70"
-   [imageHeight]="70"
-   [showSubtitle]="false"
-   [outerStrokeColor]="'#F39C12'"
-   [innerStrokeColor]="'#FAD7A0'"
-   [animation]="true"
-   [animationDuration]="700"
- ></circle-progress>
+
+<h1>Hard & Soft skills</h1>
+<br>
+<div class="col-lg-2">
+    <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
 </div>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-  <h4>CSS</h4>
- <circle-progress
-  [percent]="70"
-  [radius]="100"
-  [outerStrokeWidth]="10"
-  [innerStrokeWidth]="3"
-  [showUnits]="false"
-  [imageSrc]="'../assets/css.png'"
-  [showImage]="true"
-  [imageWidth]="70"
-  [imageHeight]="70"
-  [showSubtitle]="false"
-  [outerStrokeColor]="'#3498DB'"
-  [innerStrokeColor]="'#A9CCE3'"
-  [animation]="true"
-  [animationDuration]="700"
- ></circle-progress>
-</div>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-  <h4>JavaScript</h4>
- <circle-progress
-   [percent]="80"
-   [radius]="100"
-   [outerStrokeWidth]="10"
-   [innerStrokeWidth]="3"
-   [showUnits]="false"
-   [imageSrc]="'../assets/java-script.png'"
-   [showImage]="true"
-   [imageWidth]="70"
-   [imageHeight]="70"
-   [showSubtitle]="false"
-   [outerStrokeColor]="'#F1C40F'"
-   [innerStrokeColor]="'#F9E79F'"
-   [animation]="true"
-   [animationDuration]="700"
-></circle-progress>
-</div>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-  <h4>Github</h4>
-<circle-progress
-  [percent]="70"
-  [radius]="100"
-  [outerStrokeWidth]="10"
-  [innerStrokeWidth]="3"
-  [showUnits]="false"
-  [imageSrc]="'../assets/github.png'"
-  [showImage]="true"
-  [imageWidth]="70"
-  [imageHeight]="70"
-  [showSubtitle]="false"
-  [outerStrokeColor]="'#7D3C98'"
-  [innerStrokeColor]="'#BB8FCE'"
-  [animation]="true"
-  [animationDuration]="700"
-></circle-progress>
-</div>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-<h4>MySQL</h4>
-<circle-progress
- [percent]="60"
- [radius]="100"
- [outerStrokeWidth]="10"
- [innerStrokeWidth]="3"
- [showUnits]="false"
- [imageSrc]="'../assets/mysql.png'"
- [showImage]="true"
- [imageWidth]="70"
- [imageHeight]="70"
- [showSubtitle]="false"
- [outerStrokeColor]="'#73C6B6'"
- [innerStrokeColor]="'#A9DFBF'"
- [animation]="true"
- [animationDuration]="700"
-></circle-progress>
-</div>
-<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-  <h4>Java</h4>
-<circle-progress
- [percent]="80"
- [radius]="100"
- [outerStrokeWidth]="10"
- [innerStrokeWidth]="3"
- [showUnits]="false"
- [imageSrc]="'../assets/java.png'"
- [showImage]="true"
- [imageWidth]="70"
- [imageHeight]="70"
- [showSubtitle]="false"
- [outerStrokeColor]="'#E74C3C'"
- [innerStrokeColor]="'#E6B0AA'"
- [animation]="true"
- [animationDuration]="700"
-></circle-progress>
-</div>
+
+
+<div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
+    <circle-progress 
+        [percent]="(skill.porcentaje)" 
+        [radius]="90" 
+        [imageSrc]="''" 
+        [title]="(skill.nombre)"
+        [titleColor]="'#F8F9F9'"
+        [showTitle]="true" 
+        [showImage]="false" 
+        [imageHeight]="70" 
+        [imageWidth]="70" 
+        [showUnits]="false"
+        [showSubtitle]="false" 
+        [outerStrokeWidth]="16" 
+        [innerStrokeWidth]="2" 
+        [outerStrokeColor]="'#5DADE2'"
+        [innerStrokeColor]="'#C7E596'" 
+        [animation]="true" 
+        [animationDuration]="600">
+        </circle-progress>
+
+    <div>
+        <td *ngIf="isLogged">
+            <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                <i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(skill.id)">
+                <i class="bi bi-trash-fill"></i></button>
+        </td>
+    </div>
+    
+ </div>
 </div>
