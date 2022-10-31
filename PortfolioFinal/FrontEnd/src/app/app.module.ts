@@ -25,6 +25,9 @@ import { EditeducacionComponent } from './componentes/educacion/editeducacion.co
 import { EditSkillComponent } from './componentes/hard-and-skills/edit-skill.component';
 import { NewSkillComponent } from './componentes/hard-and-skills/new-skill.component';
 import { EditinfopersonalComponent } from './componentes/infopersonal/editinfopersonal.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -61,6 +64,8 @@ import { EditinfopersonalComponent } from './componentes/infopersonal/editinfope
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     interceptorProvider,
